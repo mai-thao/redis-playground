@@ -1,3 +1,6 @@
+# Runs a bare Redis server on port 6379
+# with no authentication
+
 services:
   hello:
     image: redis:7.4.3
