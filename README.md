@@ -21,6 +21,8 @@ Executing `docker-compose up -d` on the terminal spins up a Docker container tha
 Now, the Flask app can be started. Make sure you're in the same directory as the `simple-app.py` script, and execute the command
 `python simple-app.py`. The app should start up and be ready to accept HTTP requests.
 
+* This implies that you have Python installed ready. If you don't, then install it at: https://docs.python.org/3/using/mac.html#using-python-for-macos-from-python-org
+
 Open your browser of choice and navigate to the "/data" endpoint by going to: http://localhost:5000/data
 
 Pay attention the `source` field. It indicates whether it grabbed the message from the cache or not. If you count for 5 
