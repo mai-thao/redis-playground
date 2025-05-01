@@ -29,7 +29,9 @@ Pay attention the `source` field. It indicates whether it grabbed the message fr
 seconds, the `source` should change since 5 seconds is the TTL of the cache.
 
 ## Redis CLI
-The "redis-cli" command line tool lets you interact with the Dockerized Redis server. You can access, create, update, or delete cached data.
+The "redis-cli" is the command-line client that lets you connect to and interact with the Redis server. You can access, create, update, or delete cached data. 
+
+Since you already have the Redis server running in Docker, you don't need to manually start one with the command `redis-server`.  You can jump straight to using the client.
 
 1) Install the redis-cli tool from [Homebrew](https://brew.sh/): `brew install redis`
 2) Locally connect to the Redis standalone instance with: `redis-cli -h localhost -p 6379`
@@ -38,4 +40,5 @@ Alternatively, you can run the CLI tool directly inside the container:
 1) Find the Redis container ID by executing: `docker ps -a`
 2) Execute: `docker exec -it <CONTAINER_ID> redis-cli`
 3) If successfully connected, you'll see the output: `127.0.0.1:6379> `
-4) Interact and play around with Redis!
+4) Interact and play around with Redis
+5) When you're done, log out with `exit`
