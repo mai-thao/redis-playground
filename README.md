@@ -4,10 +4,9 @@ Redis is short for _Remote Dictionary Server_. It is a very fast, in-memory data
 In this project, I demonstrate how it works with caching API responses. 
 
 ## Simple App
-I created a super simple Flask app written in Python that checks Redis for a message, and if the message is there, it
-sends that message back. Otherwise, it sends a default message and saves it into the cache for date retrieval. 
+I created a super simple Flask app written in Python that has one endpoint. When that endpoint is called, it checks Redis for a message, and if the message is there, it sends that message back. Otherwise, it sends a default message instead and saves it into the cache for retrievel later.
 
-I set the Time To Live (TTL) to 5 seconds, which is the duration of the message in the cache before it gets automatically
+The Time To Live (TTL) is set to a short 5 seconds. TTL is the duration of the message in the cache before it gets automatically
 deleted.
 
 ### Set Up
@@ -28,3 +27,15 @@ Open your browser of choice and navigate to the "/data" endpoint by going to: ht
 
 Pay attention the `source` field. It indicates whether it grabbed the message from the cache or not. If you count for 5 
 seconds, the `source` should change since 5 seconds is the TTL of the cache.
+
+## Redis CLI
+The "redis-cli" command line tool lets you interact with the Dockerized Redis server. You can access, create, update, or delete cached data.
+
+1) Install the redis-cli tool from [Homebrew](https://brew.sh/): `brew install redis`
+2) Locally connect to the Redis standalone instance with: `redis-cli -h localhost -p 6379`
+
+Alternatively, you can run the CLI tool directly inside the container:
+1) Find the Redis container ID by executing: `docker ps -a`
+2) Execute: `docker exec -it <CONTAINER_ID> redis-cli`
+3) If successfully connected, you'll see the output: `127.0.0.1:6379> `
+4) Interact and play around with Redis!
