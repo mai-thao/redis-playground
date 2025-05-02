@@ -42,3 +42,29 @@ Alternatively, you can run the CLI tool directly inside the container:
 3) If successfully connected, you'll see the output: `127.0.0.1:6379> `
 4) Interact and play around with Redis
 5) When you're done, log out with `$ exit`
+
+### redis-cli Commands
+```
+$ ping
+Should get PONG as response to indicate the client successfully connected to the server
+
+$ ping hello
+Should get "hello" output back
+
+$ set 1 "hello" nx
+Create a key of int type 1 associated with the value of string type "hello"
+-nx option ONLY creates a new key if Not eXisting
+-xx is the oposite. Only creates a new key if new key EXists aka an override
+
+$ set name "mai"
+Create a new key called name associated with the value "mai"
+
+$ keys *
+Show all the keys matching ANY pattern and its count
+
+$ get 1
+Returns the value associated with the key, which should be "hello" (set from earlier)
+
+$ del 1 name
+Deletes the (key,value) of (1,name), will also output # of deleted keys
+```
