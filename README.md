@@ -13,13 +13,13 @@ deleted.
 Before starting the app, you must have a Redis server running. Start the Redis server by using the `docker-compose.yml` 
 file. I have another repo about Docker [here](https://github.com/mai-thao/docker-playground) if you want to learn more.
 
-Executing `docker compose up -d` on the terminal spins up a Docker container that runs a basic Redis server on port 6379
+Executing `$ docker compose up -d` on the terminal spins up a Docker container that runs a basic Redis server on port 6379
     
 * `-d` option is for detached mode, which runs the container in the background
 
 ### Run the App
 Now, the Flask app can be started. Make sure you're in the same directory as the `simple-app.py` script, and execute the command
-`python simple-app.py`. The app should start up and be ready to accept HTTP requests.
+`$ python simple-app.py`. The app should start up and be ready to accept HTTP requests.
 
 * This implies that you have Python installed ready. If you don't, then install it at: https://docs.python.org/3/using/mac.html#using-python-for-macos-from-python-org
 
@@ -31,14 +31,14 @@ seconds, the `source` should change since 5 seconds is the TTL of the cache.
 ## Redis CLI
 The "redis-cli" is the command-line client that lets you connect to and interact with the Redis server. You can access, create, update, or delete cached data. 
 
-Since you already have the Redis server running in Docker, you don't need to manually start one with the command `redis-server`.  You can jump straight to using the client.
+Since you already have the Redis server running in Docker, you don't need to manually start one with the command `$ redis-server`.  You can jump straight to using the client.
 
-1) Install the redis-cli tool from [Homebrew](https://brew.sh/): `brew install redis`
-2) Locally connect to the Redis standalone instance with: `redis-cli -h localhost -p 6379`
+1) Install the redis-cli tool from [Homebrew](https://brew.sh/): `$ brew install redis`
+2) Locally connect to the Redis standalone instance with: `$ redis-cli -h localhost -p 6379`
 
 Alternatively, you can run the CLI tool directly inside the container:
-1) Find the Redis container ID by executing: `docker ps -a`
-2) Execute: `docker exec -it <CONTAINER_ID> redis-cli`
+1) Find the Redis container ID by executing: `$ docker ps -a`
+2) Execute: `$ docker exec -it <CONTAINER_ID> redis-cli`
 3) If successfully connected, you'll see the output: `127.0.0.1:6379> `
 4) Interact and play around with Redis
-5) When you're done, log out with `exit`
+5) When you're done, log out with `$ exit`
