@@ -67,4 +67,15 @@ Returns the value associated with the key, which should be "hello" (set from ear
 
 $ del 1 name
 Deletes the (key,value) of (1,name), will also output # of deleted keys
+
+$ exists 1 name
+Return if these keys exist. Returns 0 if not
+
+$ set abc “hello” ex 10
+Create a new key and set the TTL of it to expire in 10 seconds (the EX is in seconds)
+
+$ ttl abc
+Get the TTL in seconds remaining until expired
+- Returns -1 if it didn't have a TTL set in the first place
+- Returns -2 if it had a TTL that has expired
 ```
