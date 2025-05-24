@@ -1,6 +1,6 @@
 # redis-playground
 
-Redis is short for _Remote Dictionary Server_. It is a very fast, in-memory database commonly used as a cache. 
+[Redis](https://redis.io) is short for _Remote Dictionary Server_. It is a very fast, in-memory database commonly used as a cache. 
 In this project, I demonstrate how it works with caching API responses. 
 
 ## Simple App
